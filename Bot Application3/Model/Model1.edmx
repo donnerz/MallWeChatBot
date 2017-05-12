@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="crm1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="t_activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="activity" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="floor" Type="varchar" MaxLength="10" />
+          <Property Name="basic_info" Type="varchar" MaxLength="10" />
+          <Property Name="remark" Type="varchar" MaxLength="500" />
+          <Property Name="begin" Type="datetime" />
+          <Property Name="end" Type="datetime" />
+        </EntityType>
+        <EntityType Name="t_basic_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="basic_info_code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="remark" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="t_brand">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="brand" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="floor" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="contract" Type="varchar" MaxLength="20" />
+          <Property Name="house_number" Type="varchar" MaxLength="20" />
+          <Property Name="vip_flag" Type="int" />
+        </EntityType>
+        <EntityType Name="t_brand_businessformat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brand_code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="businessformat_word_code" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_brand_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brand_code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="product_word_code" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_synonym">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="remark" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="t_word">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="remark" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="t_word_synonym">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="word_code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="synonym_code" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="test_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="10" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="test_table2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="10" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="crm1ModelStoreContainer">
+          <EntitySet Name="t_activity" EntityType="Self.t_activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_basic_info" EntityType="Self.t_basic_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_brand" EntityType="Self.t_brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_brand_businessformat" EntityType="Self.t_brand_businessformat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_brand_product" EntityType="Self.t_brand_product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_synonym" EntityType="Self.t_synonym" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_word" EntityType="Self.t_word" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_word_synonym" EntityType="Self.t_word_synonym" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="test_table" EntityType="Self.test_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="test_table2" EntityType="Self.test_table2" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="crm1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="t_brand">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="brand" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="floor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contract" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="house_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="vip_flag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="t_brand_businessformat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brand_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="businessformat_word_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_brand_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brand_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_word_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_synonym">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="t_word">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="t_word_synonym">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="word_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="synonym_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="test_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="test_table2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="crm1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="t_brand" EntityType="Self.t_brand" />
+          <EntitySet Name="t_brand_businessformat" EntityType="Self.t_brand_businessformat" />
+          <EntitySet Name="t_brand_product" EntityType="Self.t_brand_product" />
+          <EntitySet Name="t_synonym" EntityType="Self.t_synonym" />
+          <EntitySet Name="t_word" EntityType="Self.t_word" />
+          <EntitySet Name="t_word_synonym" EntityType="Self.t_word_synonym" />
+          <EntitySet Name="test_table" EntityType="Self.test_table" />
+          <EntitySet Name="test_table2" EntityType="Self.test_table2" />
+          <EntitySet Name="t_basic_info" EntityType="crm1Model.t_basic_info" />
+          <EntitySet Name="t_activity" EntityType="crm1Model.t_activity" />
+        </EntityContainer>
+        <EntityType Name="t_basic_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="basic_info_code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="t_activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="activity" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="floor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="basic_info" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="begin" Type="DateTime" Precision="3" />
+          <Property Name="end" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="crm1ModelStoreContainer" CdmEntityContainer="crm1Entities">
+          <EntitySetMapping Name="t_brand">
+            <EntityTypeMapping TypeName="crm1Model.t_brand">
+              <MappingFragment StoreEntitySet="t_brand">
+                <ScalarProperty Name="vip_flag" ColumnName="vip_flag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="contract" ColumnName="contract" />
+                <ScalarProperty Name="house_number" ColumnName="house_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_brand_businessformat">
+            <EntityTypeMapping TypeName="crm1Model.t_brand_businessformat">
+              <MappingFragment StoreEntitySet="t_brand_businessformat">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="brand_code" ColumnName="brand_code" />
+                <ScalarProperty Name="businessformat_word_code" ColumnName="businessformat_word_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_brand_product">
+            <EntityTypeMapping TypeName="crm1Model.t_brand_product">
+              <MappingFragment StoreEntitySet="t_brand_product">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="brand_code" ColumnName="brand_code" />
+                <ScalarProperty Name="product_word_code" ColumnName="product_word_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_synonym">
+            <EntityTypeMapping TypeName="crm1Model.t_synonym">
+              <MappingFragment StoreEntitySet="t_synonym">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_word">
+            <EntityTypeMapping TypeName="crm1Model.t_word">
+              <MappingFragment StoreEntitySet="t_word">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_word_synonym">
+            <EntityTypeMapping TypeName="crm1Model.t_word_synonym">
+              <MappingFragment StoreEntitySet="t_word_synonym">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="word_code" ColumnName="word_code" />
+                <ScalarProperty Name="synonym_code" ColumnName="synonym_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="test_table">
+            <EntityTypeMapping TypeName="crm1Model.test_table">
+              <MappingFragment StoreEntitySet="test_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="test_table2">
+            <EntityTypeMapping TypeName="crm1Model.test_table2">
+              <MappingFragment StoreEntitySet="test_table2">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_basic_info">
+            <EntityTypeMapping TypeName="crm1Model.t_basic_info">
+              <MappingFragment StoreEntitySet="t_basic_info">
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="basic_info_code" ColumnName="basic_info_code" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_activity">
+            <EntityTypeMapping TypeName="crm1Model.t_activity">
+              <MappingFragment StoreEntitySet="t_activity">
+                <ScalarProperty Name="end" ColumnName="end" />
+                <ScalarProperty Name="begin" ColumnName="begin" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="basic_info" ColumnName="basic_info" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="activity" ColumnName="activity" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

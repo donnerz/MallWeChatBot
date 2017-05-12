@@ -27,3 +27,13 @@
 *.exe
 *.out
 *.app
+
+/TestResults/*
+
+/Bot Application3/bin/*
+
+/Bot Application3/obj/*
+
+/Bot Application3Tests/bin/*
+
+/Bot Application3Tests/obj/*
